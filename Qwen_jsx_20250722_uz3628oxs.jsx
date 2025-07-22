@@ -1,0 +1,406 @@
+import React, { useState } from 'react';
+
+const App = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simular envío
+    alert('Gracias por tu mensaje. Me pondré en contacto contigo pronto.');
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  return (
+    <div className="font-sans text-gray-800">
+      {/* Meta tags simulation */}
+      <div className="hidden">
+        <title>Preparadora de Oposiciones de Dibujo en la Comunidad Valenciana</title>
+        <meta name="description" content="Docente de dibujo y preparadora con experiencia. Clases y packs personalizados para ESO y Bachillerato. Resultados reales. Online y a medida." />
+      </div>
+
+      {/* Hero Section */}
+      <header id="inicio" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-50 via-white to-gray-50 overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-5 pointer-events-none"></div>
+        <div className="container mx-auto px-6 py-20 relative z-10 flex flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+              Preparadora de Oposiciones de Dibujo
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 mb-8">
+              Especialista en ESO y Bachillerato · Comunidad Valenciana
+            </p>
+            <a 
+              href="#contacto"
+              className="inline-block bg-[#FFCC33] hover:bg-yellow-400 text-gray-900 font-semibold px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              Reserva tu clase gratuita
+            </a>
+          </div>
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <div className="w-80 h-80 bg-[#FFCC33] rounded-full flex items-center justify-center shadow-2xl transform rotate-3">
+                <svg className="w-48 h-48 text-white opacity-20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <img 
+                src="https://placehold.co/300x300/e2e8f0/64748b?text=Profesora" 
+                alt="Profesora de Dibujo" 
+                className="w-64 h-64 rounded-full absolute top-4 left-4 object-cover border-4 border-white shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </header>
+
+      {/* Sobre Mí */}
+      <section id="sobre-mi" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Sobre mí</h2>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Soy docente especializada en Dibujo Técnico y Expresión Gráfica con más de 10 años de experiencia en la enseñanza secundaria y preparación de oposiciones en la Comunidad Valenciana.
+              </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Mi método combina rigor técnico con una didáctica clara y accesible, adaptada a las necesidades específicas del proceso selectivo valenciano. He acompañado a más de 50 opositores en su camino hacia la plaza.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-[#FFCC33] p-3 rounded-full">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Formación</h3>
+                    <p className="text-sm text-gray-600">Licenciada en Bellas Artes y Máster en Profesorado</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-[#FFCC33] p-3 rounded-full">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Enfoque</h3>
+                    <p className="text-sm text-gray-600">Metodología práctica y centrada en el examen real</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-[#FFCC33] p-3 rounded-full">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Experiencia</h3>
+                    <p className="text-sm text-gray-600">+10 años preparando opositores en CV</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:w-1/2">
+              <img 
+                src=" https://placehold.co/600x400/e2e8f0/64748b?text=Aula+de+Dibujo" 
+                alt="Clase de Dibujo" 
+                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios */}
+      <section id="servicios" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mis servicios</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Packs personalizados para que superes cada fase del proceso selectivo con confianza y resultados comprobados.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Pack Completo */}
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="bg-[#FFCC33] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Pack Completo</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Preparación integral para todas las fases del proceso selectivo: temario, supuestos prácticos y defensa oral.
+              </p>
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-gray-900">89€</span>
+                <span className="text-gray-600">/mes</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Temario completo actualizado
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Supuestos prácticos semanales
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Corrección detallada
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Seguimiento personalizado
+                </li>
+              </ul>
+              <button className="w-full bg-[#FFCC33] hover:bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors">
+                Solicitar plaza
+              </button>
+            </div>
+            
+            {/* Clases Individuales */}
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-2 border-[#FFCC33] relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#FFCC33] text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">
+                Más popular
+              </div>
+              <div className="bg-[#FFCC33] w-16 h-16 rounded-full flex items-center justify-center mb-6 mt-4">
+                <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Clases Individuales</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Sesiones personalizadas según tus necesidades específicas y ritmo de aprendizaje.
+              </p>
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-gray-900">25€</span>
+                <span className="text-gray-600">/hora</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Atención individualizada
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Flexibilidad horaria
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Enfoque en debilidades
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Material complementario
+                </li>
+              </ul>
+              <button className="w-full bg-[#FFCC33] hover:bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors">
+                Solicitar plaza
+              </button>
+            </div>
+            
+            {/* Pack Defensa Oral */}
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="bg-[#FFCC33] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Pack Defensa Oral</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Preparación intensiva para la exposición oral del tema elegido, con simulacros y feedback experto.
+              </p>
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-gray-900">65€</span>
+                <span className="text-gray-600">/único</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  2 sesiones de 1h cada una
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Corrección del guion
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Simulacro de tribunal
+                </li>
+                <li className="flex items-center text-gray-700">
+                  <svg className="w-5 h-5 text-[#FFCC33] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  Feedback detallado
+                </li>
+              </ul>
+              <button className="w-full bg-[#FFCC33] hover:bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors">
+                Solicitar plaza
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section id="testimonios" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lo que dicen mis alumnos</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Resultados reales de opositores que han confiado en mi preparación.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-[#FFCC33]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 mb-6 italic leading-relaxed">
+                "La preparación fue clave para obtener plaza. Su método claro y sus correcciones detalladas me permitieron mejorar exponencialmente en pocas semanas."
+              </p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-[#FFCC33] rounded-full flex items-center justify-center mr-4">
+                  <span className="text-gray-900 font-bold">MC</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">María C.</h4>
+                  <p className="text-sm text-gray-600">Opositora 2023 - Obtuvo plaza</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-[#FFCC33]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 mb-6 italic leading-relaxed">
+                "Las clases individuales fueron exactamente lo que necesitaba. Enfocamos mis puntos débiles y mejoré mi técnica notablemente en solo dos meses."
+              </p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-[#FFCC33] rounded-full flex items-center justify-center mr-4">
+                  <span className="text-gray-900 font-bold">JP</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Juan P.</h4>
+                  <p className="text-sm text-gray-600">Opositor 2022 - Nota 8.7</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-[#FFCC33]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 mb-6 italic leading-relaxed">
+                "El pack de defensa oral me dio la seguridad que necesitaba. Las simulaciones fueron muy útiles y el feedback inmediato fue determinante."
+              </p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-[#FFCC33] rounded-full flex items-center justify-center mr-4">
+                  <span className="text-gray-900 font-bold">LA</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Laura A.</h4>
+                  <p className="text-sm text-gray-600">Opositora 2023 - Nota 9.2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section id="contacto" className="py-20 bg-[#FFCC33] text-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="lg:w-1/2 mb-12 lg:mb-0">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para preparar tu oposición?</h2>
+              <p className="text-lg mb-8 leading-relaxed">
+                Reserva tu clase gratuita y descubre cómo puedo ayudarte a alcanzar tu objetivo. Atención personalizada y métodos probados.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <svg className="w-6 h-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <span>profesora@oposdibujo.com</span>
+                </div>
+                <div className="flex items-center">
+                  <svg className="w-6 h-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                  <a href=" https://wa.me/34600000000 " target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    +34 600 000 000
+                  </a>
+                </div>
+              </div>
+              
+              <a 
+                href="https://wa.me/34600000000 " 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-8 bg-white text-[#FFCC33] font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
+              >
+                <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883
